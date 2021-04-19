@@ -6,6 +6,7 @@ import { InboxOutlined } from '@ant-design/icons';
 import Steps from '../Components/Steps/Steps';
 import Audio from '../Audio';
 import { Upload } from 'antd';
+import Video from '../Components/Video/Video';
 
 const { Dragger } = Upload;
 export default function VideoPage() {
@@ -22,8 +23,7 @@ export default function VideoPage() {
             <div style={{ width: '93%', height: '100vh', backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', display: 'flex' }}>
                 <div style={{ width: '55%' }}>
                     <div style={{ display: 'flex', paddingTop: '20px', paddingLeft: '20px' }}>
-                        <video width="700px" ref={videoref} controls src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
-                        </video>
+                       <Video/>
                     </div>
                     <div style={{ marginLeft: '20px', marginTop: '20px', width: '100%' }}>
                         <Audio />

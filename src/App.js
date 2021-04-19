@@ -5,10 +5,11 @@ import WaitingPage from './WaitingPage';
 import ExportVideo from './ExportVideo';
 import VideoPage from './VideoPage';
 import Audio from './Audio';
+import Progress from './Components/Progress/Progress';
 function App() {
   return (
     <div >
-     <VideoPage/>
+     <Progress/>
     </div>
 
   );
