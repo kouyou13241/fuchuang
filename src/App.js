@@ -3,11 +3,14 @@ import UploadPage from './UploadPage';
 import './App.css';
 import WaitingPage from './WaitingPage';
 import ExportVideo from './ExportVideo';
+import VideoPage from './VideoPage';
+import Audio from './Audio';
 function App() {
   return (
     <div >
-     <ExportVideo/>
+     <VideoPage/>
     </div>
+
   );
 }
 
