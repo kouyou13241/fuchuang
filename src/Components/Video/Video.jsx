@@ -14,14 +14,11 @@ import "../../../node_modules/video-react/dist/video-react.css"; // import css
 
 class AAA extends Component {
   componentDidMount() {
-    console.log(this.player)
     this.player.subscribeToStateChange(this.handleStateChange.bind(this));
   }
-
   handleStateChange(state, prevState) {
     console.log(state)
   }
-
   render() {
     return (
       <Fragment>
@@ -31,7 +28,6 @@ class AAA extends Component {
               this.player = c;
             }}
             poster="https://video-react.js.org/assets/poster.png"
-          
           >
             <source
               src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"

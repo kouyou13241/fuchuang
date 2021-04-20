@@ -67,10 +67,7 @@ export default class demo extends Component {
                            onClick={() => this.controlAudio("paused")}>暂停录制</Button>}
                         <Button  style={{margin:'20px'}}
                            onClick={() => this.controlAudio("inactive")}>停止录制</Button>
-                           <span style={{height:'30px',width:'60px',margin:'20px',marginLeft:'40px'}}>
-                        <Upload >
-                         <Button style={{display:'flex',alignItems:'center'}}>点击上传</Button>
-                        </Upload></span>
+                           
                     </div>
                 </AudioAnalyser>
             </div>
