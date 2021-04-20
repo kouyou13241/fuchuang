@@ -1,13 +1,20 @@
 import React,{Component} from 'react';
+import {Upload} from 'antd';
 import AudioAnalyser from "react-audio-analyser";
 import {Button} from 'antd';
 import {Select} from 'antd';
+import { FileExcelOutlined } from '@ant-design/icons';
 const {Option} = Select;
+
+
+
+const {Dragger} = Upload;
 export default class demo extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            status: ""
+            status: "",
+            audioType: "audio/mp3"
         }
     }
 
@@ -17,12 +24,6 @@ export default class demo extends Component {
     controlAudio(status) {
         this.setState({
             status
-        })
-    }
-
-    changeScheme(e) {
-        this.setState({
-            audioType: e.target.value
         })
     }
 
@@ -57,22 +58,21 @@ export default class demo extends Component {
             <div >
 
                 <AudioAnalyser {...audioProps}>
-                    <div >
+                    <div style={{display:'flex',justifyContent:'flex-start'}}>
                         {status !== "recording" &&
                         <Button  style={{margin:'20px'}}
-                           onClick={() => this.controlAudio("recording")}>开始</Button>}
+                           onClick={() => this.controlAudio("recording")}>开始录制</Button>}
                         {status === "recording" &&
                         <Button  style={{margin:'20px'}}
-                           onClick={() => this.controlAudio("paused")}>暂停</Button>}
+                           onClick={() => this.controlAudio("paused")}>暂停录制</Button>}
                         <Button  style={{margin:'20px'}}
-                           onClick={() => this.controlAudio("inactive")}>停止</Button>
+                           onClick={() => this.controlAudio("inactive")}>停止录制</Button>
+                           <span style={{height:'30px',width:'60px',margin:'20px',marginLeft:'40px'}}>
+                        <Upload >
+                         <Button style={{display:'flex',alignItems:'center'}}>点击上传</Button>
+                        </Upload></span>
                     </div>
                 </AudioAnalyser>
-                <select name="" id="" onChange={(e) => this.changeScheme(e)} value={audioType}>
-                    <option value="audio/webm">audio/webm（default）</option>
-                    <option value="audio/wav">audio/wav</option>
-                    <option value="audio/mp3">audio/mp3</option>
-                </select>
             </div>
         );
     }

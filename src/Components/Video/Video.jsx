@@ -25,12 +25,13 @@ class AAA extends Component {
   render() {
     return (
       <Fragment>
-        <div style={{ width: 500, height: 300, margin: 50 }}>
+        <div style={{ width: 500, height: 300, margin: 20 }}>
           <Player
             ref={c => {
               this.player = c;
             }}
             poster="https://video-react.js.org/assets/poster.png"
+          
           >
             <source
               src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"

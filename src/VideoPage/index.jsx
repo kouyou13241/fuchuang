@@ -5,7 +5,7 @@ import Title from '../Components/Title';
 import { InboxOutlined } from '@ant-design/icons';
 import Steps from '../Components/Steps/Steps';
 import Audio from '../Audio';
-import { Upload } from 'antd';
+import { Upload ,Button} from 'antd';
 import Video from '../Components/Video/Video';
 
 const { Dragger } = Upload;
@@ -22,15 +22,15 @@ export default function VideoPage() {
             <Steps />
             <div style={{ width: '93%', height: '100vh', backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', display: 'flex' }}>
                 <div style={{ width: '55%' }}>
-                    <div style={{ display: 'flex', paddingTop: '20px', paddingLeft: '20px' }}>
-                       <Video/>
+                    <div style={{ display: 'flex',margin:'0px'}}>
+                       <Video />
                     </div>
-                    <div style={{ marginLeft: '20px', marginTop: '20px', width: '100%' }}>
+                    <div style={{ marginLeft: '20px', width: '100%' }}>
                         <Audio />
                     </div>
                 </div>
                 <div>
-                    <div style={{ margin: '20px', overflow: 'scroll', height: '400px' }}>
+                    <div style={{ margin: '20px', overflow: 'scroll', height: '600px' }}>
                         <div>
                             <Subtitle word="1231231" time={20} />
                             <Subtitle word="1231231" time={20} />
@@ -43,20 +43,21 @@ export default function VideoPage() {
                             <Subtitle word="1231231" time={20} />
                         </div>
                     </div>
-                    <div style={{ height: '200px', width: '400px', margin: '20px', marginLeft: '80px' }}>
-                        <Dragger >
-                            <p className="ant-upload-drag-icon">
-                                <InboxOutlined />
-                            </p>
-                            <p className="ant-upload-text">点击或拖拽文件上传</p>
-                            <p className="ant-upload-hint">
-                              上传的录音文件最好不要超过100M，时间不要超过2分钟
-    </p>
-                        </Dragger>
+                    
+                        <div style={{ height: '200px', width: '400px', margin: '20px', marginLeft: '80px' }}>
                     </div>
+                    
+                    
                 </div>
+
+                
             </div>
 
+             <div style={{position:'relative',bottom:'120px',left:'200px',display:'flex' }}>
+                 <Button>添加标注</Button>
+                 <div style={{height:'100px',width:'1000px',backgroundColor:'black'}}></div>
+                 </div>
+             
         </div>
     );
 }

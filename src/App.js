@@ -9,7 +9,7 @@ import Progress from './Components/Progress/Progress';
 function App() {
   return (
     <div >
-     <Progress/>
+     <VideoPage/>
     </div>
 
   );
