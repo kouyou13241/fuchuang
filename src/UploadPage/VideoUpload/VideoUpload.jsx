@@ -8,6 +8,7 @@ import Video from './Upload';
 import { Progress } from 'antd';
 const { Dragger } = Upload;
 function VideoUpload(props) {
+  
   return (
     <Card style={{ margin: "20px", width: "68%", background: "white",marginRight:'40px',height:'777px' }}>
       <Paperclip text="上传视频" />
@@ -17,8 +18,7 @@ function VideoUpload(props) {
           <div><b style={{fontSize:'15px'}}>点击或将视频拖拽到这里上传</b></div>
          
           <div style={{fontSize:'12px'}}>格式支持：。。。。。</div>
-          <div style={{fontSize:'12px'}}>单词最多上传50个文件，单个文件最大1GB。。。。。。</div>
- 
+          <div style={{fontSize:'12px'}}>单词最多上传50个文件，单个文件最大1GB。。。。。。</div> 
           </div>
         </Dragger>
     <div style={{height:'350px',width:'100%'}}>

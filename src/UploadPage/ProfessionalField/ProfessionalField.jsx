@@ -15,7 +15,6 @@ export default function ProfessionalField()
            <Button text="云计算&大数据"/>
            <Button text="芯片技术"/>
            <Button text="信息安全"/>
-       </Card>
-       
+       </Card>       
     );
 }
