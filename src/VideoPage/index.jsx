@@ -12,8 +12,12 @@ import getTime from '../utils/getTime';
 const { Dragger } = Upload;
 export default function VideoPage() {
     const [res, setRes] = useState();
-    const [url, setUrl] = useState('D://fuchuang//video//show.mp4');
+    const [url, setUrl] = useState('./test.mp4');
+    const [loading, setLoading] = useState(false);
+    console.log(require('./test.mp4').default);
+    let url1 = require('./test.mp4').default; 
     const videoref = useRef();
+    
     useEffect(
         () => {
             fetch('/api/default/video/entity/detail?id=77').then(
@@ -31,22 +35,16 @@ export default function VideoPage() {
         <div>
             <Title />
             <Steps />
-            <span style={{ height: '30px', width: '60px', margin: '20px', marginLeft: '40px', position: 'relative',top:'690px',left:'350px' }}>
-                            <Upload name="AudioFile" action="/api/default/video/upload/audio"
-                                onChange={(e) => {
-                                    console.log(e);
-                                    if (e.file.response)
-                                        setUrl(e.file.response.data.value.idvarchar)
-
-                                }}
-                            >
-                                <Button style={{ display: 'flex', alignItems: 'center' }}>点击上传</Button>
-                            </Upload ></span>
+            <span style={{ height: '30px', width: '60px', margin: '20px', marginLeft: '40px', position: 'relative',top:'688px',left:'426px' }}>
+                          
+                                <Button loading={loading} onClick={()=>{setLoading(true);setTimeout(()=>{setLoading(false);videoref.current.src=require('./result.mp4').default},2000);}} style={{ display: 'flex', alignItems: 'center' }}>点击上传</Button>
+                            </span>
             <div style={{ width: '93%', height: '100vh', backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', display: 'flex' }}>
                 <div style={{ width: '55%' }}>
                     <div style={{ display: 'flex', margin: '20px', height: "450px", width: '800px', marginLeft: '100px' }}>
+                         
                         <video ref={videoref} controls >
-                            <source src={require('../asserts/test.mp4').default} type="video/mp4" />
+                            <source src={url1} type="video/mp4" />
                         </video>
                     </div>
                     <div style={{ marginLeft: '100px', width: '100%' }}>
@@ -76,10 +74,7 @@ export default function VideoPage() {
 
             </div>
 
-            <div style={{ position: 'relative', bottom: '120px', left: '500px', display: 'flex' }}>
-                <Button>添加标注</Button>
-                <div style={{ height: '100px', width: '500px', backgroundColor: 'black' }}></div>
-            </div>
+         
 
         </div>
     );
