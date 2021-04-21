@@ -3,15 +3,15 @@ import UploadPage from './UploadPage';
 import './App.css';
 import WaitingPage from './WaitingPage';
 import ExportVideo from './ExportVideo';
-import VideoAuditPage from './VideoAuditPage';
-import Dotclip from './Components/Dotclip/Dotclip';
-import PersonalPage from './PersonalPage/PersonalPage';
-import Video from './UploadPage/VideoUpload/Upload';
+import VideoPage from './VideoPage';
+import Audio from './Audio';
+import Progress from './Components/Progress/Progress';
 function App() {
   return (
-    <div>
-     <VideoAuditPage/>
+    <div >
+     <VideoPage/>
     </div>
+
   );
 }
 export default App;
