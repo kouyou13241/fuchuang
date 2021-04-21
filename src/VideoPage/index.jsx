@@ -31,16 +31,7 @@ export default function VideoPage() {
         <div>
             <Title />
             <Steps />
-            <div style={{ width: '93%', height: '100vh', backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', display: 'flex' }}>
-                <div style={{ width: '55%' }}>
-                    <div style={{ display: 'flex', margin: '20px', height: "450px", width: '800px', marginLeft: '100px' }}>
-                        <video ref={videoref} controls >
-                            <source src={require('../asserts/test.mp4').default} type="video/mp4" />
-                        </video>
-                    </div>
-                    <div style={{ marginLeft: '100px', width: '100%' }}>
-                        <Audio />
-                        <span style={{ height: '30px', width: '60px', margin: '20px', marginLeft: '40px', position: 'relative', bottom: '112px', left: '240px' }}>
+            <span style={{ height: '30px', width: '60px', margin: '20px', marginLeft: '40px', position: 'relative',top:'690px',left:'350px' }}>
                             <Upload name="AudioFile" action="/api/default/video/upload/audio"
                                 onChange={(e) => {
                                     console.log(e);
@@ -51,6 +42,16 @@ export default function VideoPage() {
                             >
                                 <Button style={{ display: 'flex', alignItems: 'center' }}>点击上传</Button>
                             </Upload ></span>
+            <div style={{ width: '93%', height: '100vh', backgroundColor: 'white', marginLeft: 'auto', marginRight: 'auto', marginTop: '20px', display: 'flex' }}>
+                <div style={{ width: '55%' }}>
+                    <div style={{ display: 'flex', margin: '20px', height: "450px", width: '800px', marginLeft: '100px' }}>
+                        <video ref={videoref} controls >
+                            <source src={require('../asserts/test.mp4').default} type="video/mp4" />
+                        </video>
+                    </div>
+                    <div style={{ marginLeft: '100px', width: '100%' }}>
+                        <Audio />
+                       
                     </div>
                 </div>
                 <div>

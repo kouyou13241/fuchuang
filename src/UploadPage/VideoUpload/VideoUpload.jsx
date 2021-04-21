@@ -6,13 +6,15 @@ import video from '../../asserts/video.png';
 import UploadButton from './UploadButton';
 import Video from './Upload';
 import { Progress } from 'antd';
+import {useHistory} from 'react-router-dom';
+
 const { Dragger } = Upload;
 function VideoUpload(props) {
-  
+  const History = useHistory();
   return (
     <Card style={{ margin: "20px", width: "68%", background: "white",marginRight:'40px',height:'777px' }}>
       <Paperclip text="上传视频" />
-        <Dragger >
+        <Dragger onChange={()=>{History.push('/loadingpage')}}>
           <div style={{ border:'2px solid #f0f0f0',margin:'20px',background: "#f5f5f5", height: "150px",display:'flex',alignItems:'center',flexDirection:'column' }}>
           <img src={video} height="45px" width='45px'/>
           <div><b style={{fontSize:'15px'}}>点击或将视频拖拽到这里上传</b></div>
